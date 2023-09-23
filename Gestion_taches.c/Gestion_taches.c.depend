@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1695461788 source:c:\users\youco\desktop\projet_sas.c\gestion_taches.c\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+
