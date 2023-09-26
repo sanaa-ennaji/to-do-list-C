@@ -36,11 +36,11 @@ void statistique();
 // funtion for using
 void tri_alpha();
 void tri_deadline();
-int tache_info(donnee tache[], int compt);
+void tache_info();
 void exit_program(int error);
-void recherche_titre(donnee tache[], int compt, const char *titre);
-void recherche_Id(donnee tache[], int compt, int identifiant);
-int tache_info(donnee tache[], int compt);
+void recherche_titre();
+void recherche_Id();
+int tache_info();
 int main()
 {
     menu();
@@ -98,7 +98,7 @@ void menu() //MENU
     }
 }
 
-int tache_info(donnee tache[], int compt)
+void tache_info()
 {
     printf("entrez l' identifiant: "); //id
     scanf("%d", &tache[compt].identifiant);
@@ -113,7 +113,7 @@ int tache_info(donnee tache[], int compt)
     scanf("%d/%d/%d", &tache[compt].deadline.jour, &tache[compt].deadline.mois, &tache[compt].deadline.annee);
     printf("entrez l'heure de la deadline: "); //time
     scanf("%d", &tache[compt].deadline.heure);
-    return compt + 1; // Return compt  KAYTZAD BI 1
+   ++compt; // Return compt  KAYTZAD BI 1
 }
 void ajouter_une_tache()
 {
@@ -170,7 +170,7 @@ void ajouter_plus_taches()
             printf("\n\nentrez les informations de la tache %d:\n", i + 1);
         }
 
-        compt = tache_info(tache, compt);
+        tache_info();
     }
 
     int choix;
@@ -282,12 +282,12 @@ void recherche()
     case 1:
         printf("Entrez l'identifiant de la tache a rechercher: ");
         scanf("%d", &id);
-        recherche_Id(tache, compt, id);
+        recherche_Id();
         break;
     case 2:
         printf("Entrez le titre de la tache a rechercher: ");
         scanf(" %[^\n]", titre_rech);
-        recherche_titre(tache, compt, titre_rech);
+        recherche_titre();
         break;
         case 3:
         menu();
@@ -300,7 +300,7 @@ void recherche()
     }
  }
 // Rechercher une tache par son Identifiant. LINEER SEARCH SEQEN---------------------------------
-void recherche_Id(donnee tache[], int compt, int identifiant)
+void recherche_Id()
 {
     int found = 0;
     for (int i = 0; i < compt; i++)
@@ -325,7 +325,7 @@ void recherche_Id(donnee tache[], int compt, int identifiant)
 }
 
 // Rechercher une tache par son Titre // LINEAR SEARCH --------------------------------------------
-void recherche_titre(donnee tache[], int compt, const char *titre)
+void recherche_titre()
 {
     int found = 0; // found
     // Linear search
@@ -420,9 +420,7 @@ void statistique()
     }
 //Afficher le nombre total des taches.
 
-//Afficher le nombre de taches completes et incompletes.
-
-//Afficher le nombre de jours restants jusqu'au d lai de chaque tache.
+//Afficher le nombre de taches completes et incompletes
 
 */
 }
