@@ -1,2 +1,2 @@
-# Application console dz Gestion des taches
+# Application console de Gestion des taches
 projet SAS de you code
